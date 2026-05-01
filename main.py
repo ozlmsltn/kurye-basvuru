@@ -35,4 +35,4 @@ def setup_cloudinary():
     )
 
 @app.post("/basvuru")
-a
+

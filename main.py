@@ -26,7 +26,7 @@ SCOPES = [
 ]
 
 SPREADSHEET_ID = "1fsnR1I8Axq8VxIkJgoAPAjpoS8fLlOdePIKB9w4fR2A"
-DRIVE_FOLDER_NAME = "Kurye Başvuru Görselleri"
+DRIVE_FOLDER_ID = "1dSHpJcu9rpMwlUfuDpnm6jNHJrhh9bu7"
 
 def get_credentials():
     service_account_info = json.loads(os.environ["GOOGLE_SERVICE_ACCOUNT"])
@@ -76,7 +76,7 @@ async def basvuru(
         gc = gspread.authorize(creds)
         drive_service = build("drive", "v3", credentials=creds)
 
-        folder_id = get_or_create_drive_folder(drive_service, DRIVE_FOLDER_NAME)
+        folder_id = get_or_create_drive_folder(drive_service, DRIVE_FOLDER_ID)
 
         g1_bytes = await gorsel1.read()
         g2_bytes = await gorsel2.read()

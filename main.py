@@ -76,7 +76,7 @@ async def basvuru(
         gc = gspread.authorize(creds)
         drive_service = build("drive", "v3", credentials=creds)
 
-        folder_id = get_or_create_drive_folder(drive_service, DRIVE_FOLDER_ID)
+        folder_id = DRIVE_FOLDER_ID
 
         g1_bytes = await gorsel1.read()
         g2_bytes = await gorsel2.read()
